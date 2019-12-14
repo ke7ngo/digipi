@@ -1,0 +1,19 @@
+[Unit]
+Description=pat
+#After=winlinkrms
+#Before=network.target
+Requires=rigctld
+#Wants=rigctld
+
+[Service]
+ExecStartPre=mount /home/pi/.wl2k 
+ExecStart=/usr/bin/pat http
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+User=pi
+
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=winlinkrms
+#After=ardop
+#Before=network.target
+Conflicts=ardop
+
+[Service]
+ExecStart=/home/pi/winlinkrms.sh
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+User=pi
+
+
+[Install]
+WantedBy=multi-user.target

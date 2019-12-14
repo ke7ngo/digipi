@@ -1,0 +1,12 @@
+[Unit]
+Description=ardopc - ARDOP softmodem for pi
+After=network.target sound.target
+
+[Service]
+User=pi
+ExecStart=/bin/sh -c "cd /tmp && /usr/local/bin/piardopc"
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,17 @@
+[Unit]
+Description=tnc
+#After=ardop
+#Before=network.target
+
+
+[Service]
+ExecStart=/home/pi/direwolf.tnc.sh
+WorkingDirectory=/home/pi/
+StandardOutput=inherit
+StandardError=inherit
+Restart=no
+User=pi
+
+
+[Install]
+WantedBy=multi-user.target
